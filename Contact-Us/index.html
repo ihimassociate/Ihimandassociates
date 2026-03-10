@@ -715,4 +715,76 @@
       </a>
     </div>
   </div>
+  <script>
+    (function () {
+      function findFormRoot(startEl) {
+        var el = startEl;
+        for (var i = 0; i < 20 && el; i++) {
+          if (el.querySelectorAll) {
+            var fields = el.querySelectorAll('input[name], textarea[name]');
+            if (fields && fields.length) return el;
+          }
+          el = el.parentElement;
+        }
+        return document;
+      }
+
+      function getValue(root, name) {
+        var field = root.querySelector('[name="' + name + '"]');
+        return field && typeof field.value === 'string' ? field.value.trim() : '';
+      }
+
+      function buildMailto(root) {
+        var name = getValue(root, 'name');
+        var phone = getValue(root, 'phone');
+        var email = getValue(root, 'email');
+        var subjectField = getValue(root, 'subject');
+        var message = getValue(root, 'message');
+
+        var subject = subjectField || ('Website consultation request' + (name ? ' - ' + name : ''));
+        var body = [
+          'New consultation request from website:',
+          '',
+          'Name: ' + (name || ''),
+          'Phone: ' + (phone || ''),
+          'Email: ' + (email || ''),
+          'Subject: ' + (subjectField || ''),
+          '',
+          'Message:',
+          message || ''
+        ].join('\n');
+
+        return (
+          'mailto:ihimassociate@gmail.com?subject=' +
+          encodeURIComponent(subject) +
+          '&body=' +
+          encodeURIComponent(body)
+        );
+      }
+
+      function handleConsultationClick(e) {
+        var button = e.currentTarget;
+        var root = findFormRoot(button);
+        window.location.href = buildMailto(root);
+      }
+
+      function init() {
+        var buttons = document.querySelectorAll('button');
+        for (var i = 0; i < buttons.length; i++) {
+          var btn = buttons[i];
+          var text = (btn.textContent || '').replace(/\s+/g, ' ').trim();
+          if (text !== 'Request Consultation') continue;
+          if (btn.getAttribute('data-mailto-bound') === '1') continue;
+          btn.setAttribute('data-mailto-bound', '1');
+          btn.addEventListener('click', handleConsultationClick);
+        }
+      }
+
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', init);
+      } else {
+        init();
+      }
+    })();
+  </script>
 </body></html>
