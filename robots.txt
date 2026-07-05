@@ -1,4 +1,4 @@
 User-agent: *
 Disallow: /cdn-cgi
 Allow: /cdn-cgi/imagedelivery/
-Sitemap: https://ihimandassociates.figweb.site/sitemap.xml
+Sitemap: https://ihimandassociates.com/sitemap.xml

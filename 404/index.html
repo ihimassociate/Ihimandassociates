@@ -1,29 +1,240 @@
-<!DOCTYPE html><html lang="en"><head>
-    <meta charset="utf-8">
-    <meta name="robots" content="noindex nofollow">
-    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <meta name="description" content="The page you're looking for could not be found. Return to Ihim & Associates homepage.">
+  <title>Page Not Found — Ihim &amp; Associates</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-    <title>Page Not Found</title>
-    <style>body{background:#fff;margin:0;padding:0;font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;overflow:hidden}h1{margin:0;font-size:36px;line-height:36px}.main{flex-direction:column;justify-content:center;align-items:center;width:100vw;height:100vh;display:flex;position:relative}.card{color:#0e1e25;flex-direction:column;width:75%;max-width:360px;padding:24px;display:flex;position:relative}p:last-of-type{margin-top:5px;margin-bottom:0;font-size:80%}a#back-link{color:#fff;background-color:#008cba;border-radius:5px;margin-bottom:1rem;padding:.5rem 1rem;text-decoration:none;display:inline-block}a#f2w{color:inherit}code{background-color:#eee;border:1px solid gray;border-radius:4px;padding:2px 4px}</style>
-  </head>
-  <body>
-    <div class="main">
-      <div class="card">
-        <div class="header">
-          <h1>Page Not Found</h1>
-        </div>
-        <div class="body">
-          <p>The link is broken or there is an error in the URL.</p>
-          <a id="back-link" href="/">Back to website</a>
-          <hr>
-          <p>
-            Website made with
-            <a id="f2w" href="https://figma.to.website" target="_blank">figma.to.website</a>.<br>If you are the owner of the website, you can customize this
-            404 page by creating a <code>/404</code> page.
-          </p>
-        </div>
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: #faf7f3;
+      color: #0f2233;
+      -webkit-font-smoothing: antialiased;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    /* ── Header ── */
+    .site-header {
+      background: #0f2233;
+      padding: 18px 48px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-shrink: 0;
+    }
+
+    .site-logo img {
+      height: 58px;
+      width: 58px;
+      display: block;
+      object-fit: contain;
+    }
+
+    .site-nav {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+    }
+
+    .site-nav a {
+      color: rgba(250, 247, 243, 0.82);
+      font-size: 14px;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+
+    .site-nav a:hover { color: #faf7f3; }
+
+    /* ── Main ── */
+    main {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 96px 24px;
+      text-align: center;
+    }
+
+    .not-found {
+      max-width: 520px;
+      width: 100%;
+    }
+
+    .error-code {
+      font-size: 104px;
+      font-weight: 700;
+      color: #c27a12;
+      line-height: 1;
+      letter-spacing: -4px;
+      margin-bottom: 24px;
+    }
+
+    .error-title {
+      font-size: 26px;
+      font-weight: 600;
+      color: #0f2233;
+      margin-bottom: 20px;
+      letter-spacing: -0.3px;
+    }
+
+    .gold-rule {
+      width: 48px;
+      height: 3px;
+      background: #c27a12;
+      margin: 0 auto 28px;
+      border-radius: 2px;
+    }
+
+    .error-message {
+      font-size: 16px;
+      color: #6f7275;
+      line-height: 1.7;
+      margin-bottom: 48px;
+    }
+
+    .action-group {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .btn-home {
+      display: inline-block;
+      background: #0f2233;
+      color: #faf7f3;
+      padding: 15px 40px;
+      border-radius: 10px;
+      font-size: 15px;
+      font-weight: 500;
+      letter-spacing: 0.1px;
+      transition: background 0.2s;
+    }
+
+    .btn-home:hover { background: #1a2c3a; }
+
+    .link-contact {
+      font-size: 14px;
+      color: #c27a12;
+      font-weight: 500;
+      transition: opacity 0.2s;
+    }
+
+    .link-contact:hover { opacity: 0.8; text-decoration: underline; }
+
+    /* ── Footer ── */
+    .site-footer {
+      background: #0f2233;
+      color: rgba(250, 247, 243, 0.65);
+      padding: 36px 48px;
+      text-align: center;
+      flex-shrink: 0;
+    }
+
+    .site-footer a { color: rgba(250, 247, 243, 0.65); }
+
+    .footer-logo {
+      display: block;
+      margin: 0 auto 16px;
+    }
+
+    .footer-logo img {
+      height: 48px;
+      width: 48px;
+      object-fit: contain;
+      display: block;
+      margin: 0 auto;
+    }
+
+    .site-footer p {
+      font-size: 13px;
+      line-height: 1.6;
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 24px;
+      margin-bottom: 14px;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a {
+      font-size: 13px;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+
+    .footer-links a:hover { color: #faf7f3; }
+
+    /* ── Mobile ── */
+    @media (max-width: 640px) {
+      .site-header { padding: 16px 20px; }
+      .site-nav { display: none; }
+      .error-code { font-size: 80px; letter-spacing: -2px; }
+      .error-title { font-size: 22px; }
+      main { padding: 64px 20px; }
+      .site-footer { padding: 28px 20px; }
+    }
+  </style>
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+</head>
+<body>
+
+  <header class="site-header">
+    <a href="/" aria-label="Ihim &amp; Associates — Return to homepage">
+      <img class="site-logo" src="https://ihimandassociates.figweb.site/cdn-cgi/imagedelivery/s-dfVpmPR-aKHmwFNwAgnQ/ihimandassociates.figweb.site-1ddfc04b09a798053b5001530fe1a6749558ca05/public"
+           alt="Ihim &amp; Associates" width="58" height="58">
+    </a>
+    <nav class="site-nav" aria-label="Main navigation">
+      <a href="/">Home</a>
+      <a href="/About-Us-Page/">About Us</a>
+      <a href="/Practice-Areas/">Practice Areas</a>
+      <a href="/Team/">Team</a>
+      <a href="/Contact-Us/">Contact Us</a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="not-found">
+      <p class="error-code">404</p>
+      <h1 class="error-title">Page Not Found</h1>
+      <div class="gold-rule"></div>
+      <p class="error-message">The page you're looking for doesn't exist or may have been moved.<br>Please check the URL, or return to our homepage.</p>
+      <div class="action-group">
+        <a href="/" class="btn-home">Return to Home</a>
+        <a href="/Contact-Us/" class="link-contact">Need assistance? Contact us →</a>
       </div>
     </div>
-  
+  </main>
 
-</body></html>
+  <footer class="site-footer">
+    <a href="/" class="footer-logo" aria-label="Ihim &amp; Associates homepage">
+      <img src="https://ihimandassociates.figweb.site/cdn-cgi/imagedelivery/s-dfVpmPR-aKHmwFNwAgnQ/ihimandassociates.figweb.site-1ddfc04b09a798053b5001530fe1a6749558ca05/public"
+           alt="Ihim &amp; Associates" width="48" height="48">
+    </a>
+    <div class="footer-links">
+      <a href="/">Home</a>
+      <a href="/About-Us-Page/">About Us</a>
+      <a href="/Practice-Areas/">Practice Areas</a>
+      <a href="/Team/">Team</a>
+      <a href="/Contact-Us/">Contact Us</a>
+    </div>
+    <p>&copy; Ihim &amp; Associates Legal Consulting. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
